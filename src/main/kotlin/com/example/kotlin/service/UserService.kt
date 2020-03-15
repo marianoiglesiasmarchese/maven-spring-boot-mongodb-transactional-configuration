@@ -24,4 +24,9 @@ class UserService(private val userRepository: UserRepository) {
         return userRepository.findById(id).orElseThrow { throw UserNotFoundException() }
     }
 
+    //    @Transactional
+//    fun somethingTransactional() {
+//
+//    }
+
 }

@@ -1,9 +1,21 @@
-version: '3.3'
-
+version: "3"
 services:
-  mongo:
+  master:
     image: mongo
+    depends_on:
+      - slave
+    networks:
+      - mongo-cluster
+    volumes:
+      - ./init-repl-set.sh:/docker-entrypoint-initdb.d/init-repl-set.sh
+    command: mongod --replSet replset
     ports:
-      - 27017:27017
-    environment:
-      - MONGO_INITDB_DATABASE=test
+      - "27017:27017"
+  slave:
+    image: mongo
+    networks:
+      - mongo-cluster
+    command: mongod --replSet replset
+networks:
+  mongo-cluster:
+    driver: bridge

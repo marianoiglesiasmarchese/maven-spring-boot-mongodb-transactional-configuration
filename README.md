@@ -1,13 +1,13 @@
-# maven-spring-boot-mongodb
+# maven-spring-boot-mongodb-transactional-configuration
 
-Simple spring boot mongoDB project paginating either simple queries (default pageable) 
-as well as annotated queries and aggregations (custom pageable). 
-The last case is not supported by default by Spring MongoRepository.
+Simple spring boot mongoDB (major to 4.0 version) project with transactional configuration, 
+and also docker compose replica set.
 
 ### links of interest:
-* https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongodb.repositories.queries.aggregation
-* https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#repositories.special-parameters
-* https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#core.web.basic.paging-and-sorting
+* https://onecompiler.com/posts/3uxxu2z5h/how-to-use-mongodb-transactions-in-spring-boot
+* https://gist.github.com/mpowaga/e1f386efedc73837f4a7fac4ef3c3136
+* https://docs.mongodb.com/manual/replication/
+* https://www.mongodb.com/cloud/atlas (it has the replica set already configured)
 
 ## Start up from terminal
 ```bash
