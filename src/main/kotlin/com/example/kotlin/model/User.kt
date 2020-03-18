@@ -8,7 +8,8 @@ data class User(
     @Id var id: String? = null,
     val name: Name,
     val address: Address,
-    val avatar: String
+    val avatar: String,
+    var group: Group = Group(name = "empty group")
 )
 
 class Name(
